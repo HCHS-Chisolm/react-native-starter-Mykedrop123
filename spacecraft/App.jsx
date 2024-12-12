@@ -3,15 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './src/screens/LoginScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-
-
-export default function App() {
+function App() {
   return (
     <PaperProvider>
       <LoginScreen />
+      <StarshipFeedScreen/>
+      {/* <TermsScreen />*/}
     </PaperProvider>
-  );
-}
+    );
+  };
 
 const styles = StyleSheet.create({
   container: {
@@ -21,3 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
