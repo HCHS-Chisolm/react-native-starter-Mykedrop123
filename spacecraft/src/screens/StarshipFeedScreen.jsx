@@ -1,0 +1,26 @@
+import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
+import { default as data } from "../../api/data.json";
+import StarshipItem from "../components/StarshipItem";
+
+export const StarshipFeedScreen = () => {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={data.results}
+        keyExtractor={(item) => item.url}
+        renderItem={({ item })=> <StarshipItem starship={item} />}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  headerContainer: {
+    marginTop: 20,
+    paddingHorizontal: 20,
+  },
+});
